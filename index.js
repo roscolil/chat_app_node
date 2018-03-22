@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
 
-var server = app.listen(9090, function () {  
+
+app.use(express.static("public"));
+
+app.listen(9090, function () {  
   console.log('Listening on port 9090');
 });
 
