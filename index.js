@@ -13,7 +13,10 @@ app.use(express.static("public"));
 
 io.on("connection", function(socket){
   console.log('Socket connection made ' + socket.id);
-  });
+  socket.on("chat", function (data) {
+    io.sockets.emit("chat", data);
+  } );
+});
 
 
 
